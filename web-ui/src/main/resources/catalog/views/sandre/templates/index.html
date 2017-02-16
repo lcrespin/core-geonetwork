@@ -1,0 +1,446 @@
+<!-- <div class="navbar navbar-default gn-top-bar" role="navigation"
+     data-ng-include="'../../catalog/templates/top-toolbar.html'"
+     xmlns="http://www.w3.org/1999/html">
+</div> -->
+<div class="navbar navbar-default gn-top-bar" data-ng-include="'../../catalog/views/sandre/templates/top-toolbar.html'" role="navigation" xmlns="http://www.w3.org/1999/html">
+</div>
+<div data-gn-alert-manager="">
+</div>
+<div class="gn-search-page" data-ng-controller="GnSearchController">
+    <cookiewarning>
+    </cookiewarning>
+    <div class="" data-ng-controller="gnsDefault">
+        <gn-extend-mainctrl>
+        </gn-extend-mainctrl>
+        <div data-ng-include="'../../catalog/views/sandre/templates/home.html'" data-ng-show="activeTab == '/home'">
+        </div>
+        <div data-ng-include="'../../catalog/views/sandre/templates/results.html'" data-ng-show="activeTab == '/search'">
+        </div>
+        <div data-ng-if="isMapViewerEnabled" data-ng-include="'../../catalog/views/sandre/templates/map.html'" data-ng-show="activeTab == '/map'">
+        </div>
+        <div data-ng-include="'../../catalog/views/sandre/templates/recordView.html'" data-ng-show="activeTab == '/metadata'">
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-default gn-bottom-bar">
+    <div id="footer_right">
+        <!-- 8 Site info (pied de page) -->
+        <div id="site_info_left">
+            <div id="portail">
+                <a href="http://www.servicepublic.fr/" target="_blank" title="Le portail de l'administration française">
+                    <img alt="Le portail de l'administration française" src="/sites/all/themes/oieau_sandre/images/pied/logo_service-public.gif">
+                    </img>
+                </a>
+            </div>
+            <form action="" id="action_menu" method="get">
+                <p>
+                    <select id="menu1" name="menu1" onchange="javascript:redirection('menu1')">
+                        <option selected="selected" value="">
+                            Autres sites de la toile Eaufrance
+                        </option>
+                        <option value="http://www.ades.eaufrance.fr">
+                            ADES
+                        </option>
+                        <option value="http://adour-garonne.eaufrance.fr">
+                            Bassin Adour-Garonne
+                        </option>
+                        <option value="http://www.artois-picardie.eaufrance.fr">
+                            Bassin Artois-Picardie
+                        </option>
+                        <option value="http://www.corse.eaufrance.fr">
+                            Bassin Corse
+                        </option>
+                        <option value="http://www.guadeloupe.eaufrance.fr">
+                            Bassin Guadeloupe
+                        </option>
+                        <option value="http://www.guyane.eaufrance.fr">
+                            Bassin Guyane
+                        </option>
+                        <option value="http://www.loire-bretagne.eaufrance.fr">
+                            Bassin Loire-Bretagne
+                        </option>
+                        <option value="http://www.martinique.eaufrance.fr">
+                            Bassin Martinique
+                        </option>
+                        <option value="http://www.reunion.eaufrance.fr">
+                            Bassin Réunion
+                        </option>
+                        <option value="http://www.rhin-meuse.eaufrance.fr">
+                            Bassin Rhin-Meuse
+                        </option>
+                        <option value="http://www.rhone-mediterranee.eaufrance.fr">
+                            Bassin Rhône-Méditerranée
+                        </option>
+                        <option value="http://www.seine-normandie.eaufrance.fr">
+                            Bassin Seine-Normandie
+                        </option>
+                        <option value="http://http://www.cartograph.eaufrance.fr/">
+                            Cartograph
+                        </option>
+                        <option value="http://www.documentation.eaufrance.fr">
+                            Documentation
+                        </option>
+                        <option value="http://www.eaufrance.fr">
+                            Eaufrance
+                        </option>
+                        <option value="http://www.economie.eaufrance.fr">
+                            Economie
+                        </option>
+                        <option value="http://www.glossaire.eaufrance.fr">
+                            Glossaire
+                        </option>
+                        <option value="http://www.hydro.eaufrance.fr">
+                            Hydro
+                        </option>
+                        <option value="http://www.image.eaufrance.fr">
+                            Image
+                        </option>
+                        <option value="http://www.onde.eaufrance.fr">
+                            Onde
+                        </option>
+                        <option value="http://www.data.eaufrance.fr">
+                            Opendata SIE
+                        </option>
+                        <option value="http://www.pollutions.eaufrance.fr/pcb">
+                            PCB
+                        </option>
+                        <option value="http://www.rapportage.eaufrance.fr">
+                            Rapportage
+                        </option>
+                        <option value="http://www.reseau.eaufrance.fr">
+                            Res'eau
+                        </option>
+                        <option value="http://www.sandre.eaufrance.fr">
+                            Sandre
+                        </option>
+                        <option value="http://www.services.eaufrance.fr">
+                            Services
+                        </option>
+                        <option value="http://www.surveillance.eaufrance.fr">
+                            Surveillance
+                        </option>
+                        <option value="http://www.zones-conchylicoles.eaufrance.fr">
+                            Zones conchylicoles
+                        </option>
+                        <option value="http://www.zones-humides.eaufrance.fr">
+                            Zones humides
+                        </option>
+                    </select>
+                </p>
+            </form>
+        </div>
+        <div id="site_info_right">
+            <ul>
+                <li>
+                    <a href="/urn.php" title="URN">
+                        Liens
+                    </a>
+                </li>
+                <li>
+                    <a href="/FAQ" title="FAQ">
+                        FAQ
+                    </a>
+                    |
+                </li>
+                <li>
+                    <a href="/RSS" title="Flux RSS">
+                        <img alt="logo RSS" class="picto_rss" src="/sites/all/themes/oieau_sandre/images/pied/picto_rss.png">
+                            RSS
+                        </img>
+                    </a>
+                    |
+                </li>
+                <li>
+                    <a href="/mentions-legales" title="Mentions légales">
+                        Mentions légales
+                    </a>
+                    |
+                </li>
+                <li>
+                    <a href="/avertissement" title="Avertissement">
+                        Avertissement
+                    </a>
+                    |
+                </li>
+                <li>
+                    <img alt="" height="11px" src="/sites/all/themes/oieau_sandre/images/pied/picto_plan.gif">
+                        <a href="/sitemap" title="Plan du site">
+                            Plan du site
+                        </a>
+                        |
+                    </img>
+                </li>
+            </ul>
+            <div id="onema" property="foaf:made">
+                <!--<a target="_blank" href="http://www.developpement-durable.gouv.fr/" title="Lien vers le site du ministère en charge de l'environnement">
+            <img height="55" src="/sites/all/themes/oieau_sandre/images/pied/MEDDTL.gif" alt="logo du ministère en charge de l'environnement" title="logo du ministère en charge de l'environnement"/>
+          </a>-->
+                <span typeof="Organization">
+                    <a content="Onema" href="http://www.onema.fr" property="foaf:name" rel="foaf:homepage" target="_blank" title="Lien vers le site de l'Onema">
+                        <img alt="logo de l'Onema" height="50" rel="foaf:depiction" src="/sites/all/themes/oieau_sandre/images/pied/logo_onema.jpg" title="logo de l'Onema">
+                        </img>
+                    </a>
+                </span>
+                <span typeof="Organization">
+                    <a content="Oieau" href="http://www.oieau.fr" property="foaf:name" rel="foaf:homepage" target="_blank" title="Lien vers le site de l'Office International de l'Eau (OIEau)">
+                        <img alt="logo de l'OIEau" height="50" rel="foaf:depiction" src="/sites/default/files/OIEau-50_2.png" title="Office International de l'Eau (OIEau)">
+                        </img>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <!-- end site info -->
+    </div>
+    <div id="sitemap">
+        <div class="site-map-box-menu site-map-box-menu-menu-a-propos-du-sandre site-map-box">
+            <h2 class="title">
+                A propos du Sandre
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="/missions-et-organisation-du-sandre" title="Les informations sur les activités, les missions et l'organisation du Sandre.">
+                            Missions et organisation du Sandre
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/le-sandre-un-r%C3%A9f%C3%A9rentiel-partag%C3%A9-dans-le-domaine-de-leau" title="Les informations sur le référentiel Sandre et le Système d'information sur l'eau (SIE).">
+                            Le référentiel de données sur l’eau
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/produits-de-communication-du-service-d%E2%80%99administration-nationale-des-donn%C3%A9es-et-r%C3%A9f%C3%A9rentiels-sur-l" title="Les produits de communication (plaquettes, vidéos, etc.) relatifs au Sandre.">
+                            Produits de communication
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="/tutoriels" title="Tout l'aide disponible (vidéos, guides, etc.) pour utiliser les produits et services du Sandre.">
+                            Tutoriels
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-map-box-menu site-map-box-menu-menu-conformite-avec-le-sandre site-map-box">
+            <h2 class="title">
+                Conformité Sandre
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="/tous-les-types-de-conformit%C3%A9-sandre" title="Toutes les explications sur la conformité Sandre (d'un fichier d'échange, d'un service web) et les indications sur l'expertise sémantique d'un système informatique.">
+                            Qu'est-ce qu'une conformité ?
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="/resultats-des-conformites" title="Les résultats des conformités aux spécifications du Sandre relatives à des fichiers d'échange ou à des systèmes informatiques (logiciels ou bases de données).">
+                            Résultats des conformités
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-map-box-menu site-map-box-menu-menu-documents site-map-box">
+            <h2 class="title">
+                Documents
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="/Rechercher-un-document" title="L’ensemble de la documentation Sandre (dictionnaires de données, scénarios d'échanges et de service web, documents d'administration des référentiels et ressources complémentaires).">
+                            Rechercher un document
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="/rechercher-la-definition-d-un-concept" title="L’ensemble des définitions des concepts Sandre (qui figurent notamment dans les dictionnaires de données).">
+                            Rechercher la définition d'un concept
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-map-box-menu site-map-box-menu-menu-donn-es-de-r-f-rence site-map-box">
+            <h2 class="title">
+                Données de référence
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="/Rechercher-un-jeu-de-donnees" title="La liste des jeux de données de référence du Sandre (masses d'eau, cours d'eau, communes, etc.).">
+                            Rechercher un jeu de données
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/Rechercher-une-donnee-d-un-jeu" title="La liste des données de référence Sandre d'un jeu (codes des paramètres, des départements, des cours d'eau, etc.).">
+                            Rechercher une donnée d’un jeu
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/atlascatalogue/" title="Point d'entrée vers l'Atlas-Catalogue du Sandre, interface de recherche et de visualisation des jeux de données géographiques.">
+                            Consulter l'atlas catalogue
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://mdm.sandre.eaufrance.fr" title="Accès à l'outil de gestion des référentiels du Sandre (MDM) pour faire des demandes d'ajout ou de modification dans les jeux de données de référence.">
+                            Modifier une donnée
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="/toutes-les-mises-%C3%A0-jour-d%E2%80%99un-jeu-de-donn%C3%A9es-sandre" title="Téléchargement de toutes les mises à jour d’un jeu de données Sandre depuis une date choisie.">
+                            Télécharger les mises à jour
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-map-box-menu site-map-box-menu-menu-mentions-legales site-map-box">
+            <h2 class="title">
+                Mentions légales
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="/avertissement">
+                            Avertissement
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="/cr%C3%A9dits">
+                            Crédits
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-map-box-menu site-map-box-menu-menu-outils-et-services site-map-box">
+            <h2 class="title">
+                Outils et services
+            </h2>
+            <div class="content">
+                <ul class="site-map-menu">
+                    <li class="first leaf">
+                        <a href="http://www.sandre.eaufrance.fr/tester-un-fichier-d%C3%A9change" title="Accès au service Sandre permettant d'effectuer une procédure de conformité d'un fichier d’échange (consiste à vérifier qu'un fichier est conforme à un scénario d'échange Sandre).">
+                            Tester un fichier d'échange
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/v%C3%A9rifier-la-conformit%C3%A9-de-votre-service-web-au-sandre" title="Accès au service Sandre permettant d'effectuer une procédure de conformité d'un service web (consiste à vérifier qu'un service web est conforme à un scénario technique Sandre).">
+                            Tester un service web
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/saisir-vos-r%C3%A9sultats-danalyses-selon-le-sc%C3%A9nario-sandre-edilabo" title="Saisie des résultats d'analyses selon le scénario Sandre EDILABO (transmission informatisée de données entre commanditaires et laboratoires).">
+                            Outil EDILABO
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://services.sandre.eaufrance.fr/References/1.3.0/" title="Accès au générateur de requêtes au service web référentiel (rechercher et récupérer les référentiels, être averti des mises à jour, etc.).">
+                            Assistant du service web référentiels
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/convertisseur-de-code-taxonomique" title="Le convertisseur de (liste de) codes, pour connaître l'équivalence d'un code Sandre (ou d'un autre référentiel) dans un autre référentiel taxonomique (ou inversement).">
+                            Convertisseur de codes
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/convertisseur-de-numeros-cas" title="">
+                            Convertisseur de numéros CAS
+                        </a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://www.sandre.eaufrance.fr/generateur-de-base-de-donnees" title="Cet outil vous permet de générer une base de données conforme aux spécification du Sandre">
+                            Générateur de base de données
+                        </a>
+                    </li>
+                    <li class="last leaf">
+                        <a href="http://www.sandre.eaufrance.fr/convertisseur-inspire" title="">
+                            Convertisseur Sandre - Inspire
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="http://geonetwork-opensource.org/">
+                <span data-translate="" data-translate-values="{platform: '{{info['system/platform/name']}}', version: '{{info['system/platform/version']}}', subversion: '{{info['system/platform/subVersion']}}'}">
+                    versionDetails
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="../../doc/api" title="{{'learnTheApi' | translate}}">
+                API
+            </a>
+        </li>
+        <li class="gn-footer-text" ng-hide="showSocialMediaLink">
+            <span data-translate="">
+                shareOn
+            </span>
+        </li>
+        <li class="socialmedia" ng-hide="showSocialMediaLink">
+            <a href="https://www.facebook.com/sharer.php?u={{socialMediaLink | encodeURIComponent}}" target="_blank" title="Facebook">
+                <i class="fa fa-facebook">
+                </i>
+            </a>
+            <a href="https://twitter.com/share?url={{socialMediaLink | encodeURIComponent}}" target="_blank" title="Twitter">
+                <i class="fa fa-twitter">
+                </i>
+            </a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&url={{socialMediaLink | encodeURIComponent}}" target="_blank" title="LinkedIn">
+                <i class="fa fa-linkedin">
+                </i>
+            </a>
+            <a href="https://plus.google.com/share?url={{socialMediaLink | encodeURIComponent}}" target="_blank" title="Google+">
+                <i class="fa fa-google-plus">
+                </i>
+            </a>
+            <a href="mailto:?subject={{info.site.name}}&body={{socialMediaLink | encodeURIComponent}}" target="_blank" title="Email">
+                <i class="fa fa-envelope-o">
+                </i>
+            </a>
+        </li>
+        <li>
+            <a href="rss.search?sortBy=changeDate&georss=simplepoint" title="{{'lastRecords' | translate}}">
+                <i class="fa fa-rss">
+                </i>
+            </a>
+        </li>
+    </ul>
+    <script>
+        /**
+         * Fonction de redirection pour la liste déroulante des sites dans le footer
+         */
+        function redirection( menu ) {
+            try{
+                var selectToRedirect = document.getElementById(menu);
+                window.location = selectToRedirect.value;
+            }
+            catch(e){
+                alert("La redirection demandée n'existe pas.");
+            }
+        }        
+    </script>
+    <script>
+      (
+        function(i,s,o,g,r,a,m){
+            i['GoogleAnalyticsObject']=r;
+            i[r]=i[r]||function() {
+                (i[r].q=i[r].q||[]).push(arguments)
+            },
+            i[r].l=1*new Date();
+            a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];
+            a.async=1;
+            a.src=g;
+            m.parentNode.insertBefore(a,m)
+        }
+      )
+      (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-12644134-7', 'auto');
+      ga('send', 'pageview', location.pathname+location.hash);
+    </script>
+</div>
